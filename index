@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資工系-2 資訊</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-bottom: 20px; /* 增加按鈕之間的間距 */
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            background-color: #3e8e41;
+            transform: translateY(0);
+        }
+
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <h1>資工系-2 資訊</h1>
+    <button onclick="window.location.href='list.html'">查看班級名單</button>
+    <button onclick="window.location.href='curr.html'">查看班級課表</button>
+</body>
+</html>
