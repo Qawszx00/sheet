@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資工系-2 課表</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            background-color: #f44336;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #e31e0f;
+            transform: translateY(-2px);
+        }
+
+        .back-button:active {
+            background-color: #d4130b;
+            transform: translateY(0);
+        }
+
+        .back-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.4);
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ec8907;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-bottom: 20px; /* 增加按鈕之間的間距 */
+        }
+        button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            background-color: #3e8e41;
+            transform: translateY(0);
+        }
+
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <h2>資工系-2(上) 課表</h2>
+    <table>
+        <tr>
+            <th>節次</th>
+            <th>時間</th>
+            <th>一</th>
+            <th>二</th>
+            <th>三</th>
+            <th>四</th>
+            <th>五</th>
+            <th>六</th>
+        </tr>
+        <tr>
+            <td rowspan="2">六</td><td>13:40 - 14:25</td><td></td><td></td><td></td><td></td><td></td><td>計算機網路</td>
+        </tr>
+        <tr>
+            <td>教室</td><td></td><td></td><td></td><td></td><td></td><td>2702</td>
+        </tr>
+        <tr>
+            <td rowspan="2">七</td><td>14:30 - 15:15</td><td></td><td></td><td></td><td></td><td></td><td>計算機網路</td>
+        </tr>
+        <tr>
+            <td>教室</td><td></td><td></td><td></td><td></td><td></td><td>2702</td>
+        </tr>
+        <tr>
+            <td rowspan="2">八</td><td>15:20 - 16:05</td><td></td><td></td><td></td><td></td><td></td><td>計算機網路</td>
+        </tr>
+        <tr>
+            <td>教室</td><td></td><td></td><td></td><td></td><td></td><td>2702</td>
+        </tr>
+        <tr>
+            <td rowspan="2">九</td><td>16:10 - 16:55</td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td>教室</td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td rowspan="2">十</td><td>18:00 - 18:45</td><td>班會</td><td>資料結構</td><td>國防</td><td>人工智慧概論</td><td>計算機組織</td><td></td>
+        </tr>
+        <tr>
+           <td>教室</td><td>6605</td><td>2702</td><td></td><td>2705</td><td>2702</td><td></td>
+        </tr>
+        <tr>
+            <td rowspan="2">十一</td><td>18:50 - 19:35</td><td>班會</td><td>資料結構</td><td>國防</td><td>人工智慧概論</td><td>計算機組織</td><td></td>
+        </tr>
+        <tr>
+            <td>教室</td><td>6605</td><td>2702</td><td></td><td>2705</td><td>2702</td><td></td>
+        </tr>
+        <tr>
+            <td rowspan="2">十二</td><td>19:40 - 20:25</td><td>數位邏輯設計</td><td>資料結構</td><td>工程數學</td><td>人工智慧概論</td><td>計算機組織</td><td></td>
+        </tr>
+        <tr>
+            <td>教室</td><td>2703</td><td>2702</td><td>0000</td><td>2705</td><td>2702</td><td></td>
+        </tr>
+        <tr>
+            <td rowspan="2">十三</td><td>20:30 - 21:15</td><td>數位邏輯設計</td><td>體育</td><td>工程數學</td><td>台灣開發史</td><td></td><td></td>
+        </tr>
+        <tr>
+            <td>教室</td><td>2703</td><td>0000</td><td>0000</td><td>3206</td><td></td><td></td>
+        </tr>
+        <tr>
+            <td rowspan="2">十四</td><td>21:20 - 22:05</td><td>數位邏輯設計</td><td>體育</td><td>工程數學</td><td>台灣開發史</td><td></td><td></td>
+        </tr>
+        <tr>
+            <td>教室</td><td>2703</td><td>0000</td><td>0000</td><td>3206</td><td></td><td></td>
+        </tr>
+    </table>
+
+    <div class="button-container">
+        <button onclick="window.location.href='主頁.html'">返回主頁</button>
+        <button onclick="window.location.href='名單.html'">班級名單</button>
+    </div> 
+</body>
+</html>
