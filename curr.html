@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>資工系-2 課表</title>
-    <link rel="icon" href="https://png.pngtree.com/png-clipart/20210911/ourmid/pngtree-study-textbook-png-image_3900752.png" type="image/png">
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             margin: 0;
-            flex-direction: column;
         }
 
         h2 {
@@ -44,6 +43,12 @@
             background-color: #f2f2f2;
         }
 
+        .button-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
         .back-button {
             padding: 10px 20px;
             background-color: #f44336;
@@ -53,7 +58,6 @@
             font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            margin-top: 20px;
         }
 
         .back-button:hover {
@@ -61,39 +65,20 @@
             transform: translateY(-2px);
         }
 
-        .back-button:active {
-            background-color: #d4130b;
-            transform: translateY(0);
-        }
-
-        .back-button:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.4);
-        }
-        button {
+        .list-button {
             padding: 10px 20px;
             background-color: #ec8907;
             border: none;
             border-radius: 8px;
             color: white;
-            font-size: 18px;
+            font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            margin-bottom: 20px; /* 增加按鈕之間的間距 */
         }
-        button:hover {
-            background-color: #45a049;
+
+        .list-button:hover {
+            background-color: #d97706;
             transform: translateY(-2px);
-        }
-
-        button:active {
-            background-color: #3e8e41;
-            transform: translateY(0);
-        }
-
-        button:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.4);
         }
     </style>
 </head>
@@ -167,8 +152,8 @@
     </table>
 
     <div class="button-container">
-        <button onclick="window.location.href='index.html'">返回主頁</button>
-        <button onclick="window.location.href='list.html'">班級名單</button>
+        <button class="back-button" onclick="window.location.href='index.html'">返回主頁</button>
+        <button class="list-button" onclick="window.location.href='list.html'">班級名單</button>
     </div> 
 </body>
 </html>
