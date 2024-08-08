@@ -3,188 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>（夜）資工－2（上）</title>
-    <link rel="icon" href="https://png.pngtree.com/png-clipart/20210911/ourmid/pngtree-study-textbook-png-image_3900752.png" type="image/png">
+    <title>(夜)資工-2</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            flex-direction: column;
-            overflow-x: auto;
-        }
-        h1, h2 {
-            color: #1f1d1d;
-            margin-bottom: 10px;
-        }
-        .button-container {
-            margin-top: 50px;
-            display: flex;
-            justify-content: center;
-        }
-        button {
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: #4CAF50;
-            border: none;
-            border-radius: 4px;
-            color: white;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #e26918d5;
-        }
-        .hidden-content {
-            display: none;
-            margin-top: 10px;
-        }
         .table-container {
-            overflow-x: auto;
-            white-space: nowrap;
+            margin: 0 20px; /* 为两个表格之间增加间距 */
+        }
+
+        .pagination {
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            margin-top: 20px; /* 按钮与表格之间的间距 */
         }
-        #table {
-            width: 100%;
+
+        table {
+            border-collapse: collapse;
+            margin-bottom: 0px;
         }
+
         th, td {
-            border: 2px solid #ddd;
-            padding: 2px;
+            border: 1px solid #ddd;
+            padding: 8px;
             text-align: center;
         }
+        h2{
+            text-align: center;
+        }
+
         th {
             background-color: #4CAF50;
             color: white;
-            font-weight: bold;
-            text-transform: uppercase;
         }
-        tr:nth-child(even) {    
+
+        tr:nth-child(even) {
             background-color: #f2f2f2;
         }
-        tr:hover {
-            background-color: #a6bac2;
-        }
-        .pagination {
-            margin-top: 10px;
-        }
+
+        /* 按钮样式设计 */
         .pagination button {
-            margin: 2px;
-            padding: 5px 10px;
             background-color: #4CAF50;
-            border: none;
             color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
             cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
+
         .pagination button:hover {
             background-color: #45a049;
+            transform: translateY(-2px);
         }
-        .back-button {
-            margin-top: 20px;
-            background-color: #f44336;
+
+        .pagination button:active {
+            background-color: #3e8e41;
+            transform: translateY(0);
         }
-        .back-button:hover {
-            background-color: #e31e0f;
+
+        .pagination button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.4);
         }
-        .sidebar {
-            margin-left: 20px;
-            background-color: #f7f7f7;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .sidebar h3 {
+
+        .pagination span {
+            font-size: 16px;
+            margin: auto 10px;
             color: #333;
-            margin-bottom: 10px;
+        }
+        button {
+            padding: 15px 30px;
+            background-color: #db7a0a;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-bottom: 20px; /* 增加按鈕之間的間距 */
+        }
+        button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            background-color: #3e8e41;
+            transform: translateY(0);
+        }
+
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.4);
+        }
+        .button-container {
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中（如果容器有高度的話） */
+             gap: 20px; /* 增加按鈕之間的間距 */
         }
     </style>
-    <script type="text/javascript">
-        let currentPage = 1;
-        const recordsPerPage = 22;
-
-        function showPage(page) {
-            const rows = document.querySelectorAll('#table1 tbody tr');
-            const totalPages = Math.ceil(rows.length / recordsPerPage);
-            if (page < 1) page = 1;
-            if (page > totalPages) page = totalPages;
-
-            rows.forEach((row, index) => {
-                row.style.display = (index >= (page - 1) * recordsPerPage && index < page * recordsPerPage) ? '' : 'none';
-            });
-            const table = document.getElementById('table1');
-            const thead = table.querySelector('thead').cloneNode(true);
-            table.insertBefore(thead, table.querySelector('tbody'));
-
-            currentPage = page;
-            document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages}`;
-        }
-
-        function changePage(amount) {
-            showPage(currentPage + amount);
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            showPage(1);
-        });
-    </script>
-    <script type="text/javascript">
-        function showContent(contentId) {
-            document.getElementById('table1').style.display = 'none';
-            document.getElementById('table2').style.display = 'none';
-            document.getElementById(contentId).style.display = 'block';
-            document.querySelector('.button-container').style.display = 'none';
-        }
-
-        function showButtons() {
-            document.getElementById('table1').style.display = 'none';
-            document.getElementById('table2').style.display = 'none';
-            document.querySelector('.button-container').style.display = 'flex';
-        }
-    </script>
 </head>
 <body>
-    <h1>（夜）資工－2（上）</h1>
-    <div class="button-container">
-        <button onclick="showContent('table1')">班級名單</button>
-        <button onclick="showContent('table2')">課表</button>
-    </div>
-    
-    <div id="table1" class="hidden-content">
-        <div class="content-container">
-            <div class="table-container">
-        <h3>資工-2(上)班級名單</h3>
+    <h2>班級名單</h2>
+    <div style="display: flex; justify-content: center;">
+        <!-- 左边的表格 -->
         <div class="table-container">
-            <table id="table1">
+            <table id="class-table">
                 <tr>
                     <th>編號</th>
                     <th>學號</th>
                     <th>姓名</th>
-                    <th>幹部</th>
                 </tr>
-                <tr><td></td><td>導師</td><td>黃馨逸</td></tr>
-                <tr><td>1</td><td>2411232002</td><td>黃羽崢</td></tr>
-                <tr><td>2</td><td>2411232003</td><td>蔡政邦</td></tr>
-                <tr><td>3</td><td>2411232004</td><td>何亮妤</td></tr>
-                <tr><td>4</td><td>2411232005</td><td>黃鈺晴</td><td>學藝</td></tr>
-                <tr><td>5</td><td>2411232006</td><td>陳暐傑</td></tr>
-                <tr><td>6</td><td>2411232008</td><td>郭品君</td></tr>
-                <tr><td>7</td><td>2411232009</td><td>陳淑瀅</td></tr>
+                <tr>
+                    <td>1</td>
+                    <td>2411232002</td>
+                    <td>黃羽崢</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2411232003</td>
+                    <td>蔡政邦</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>2411232004</td>
+                    <td>何亮妤</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>2411232005</td>
+                    <td>黃鈺晴</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>2411232006</td>
+                    <td>陳暐傑</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>2411232008</td>
+                    <td>郭品君</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>2411232009</td>
+                    <td>陳淑瀅</td>
+                </tr>
                 <tr><td>8</td><td>2411232010</td><td>蔣佳霖</td></tr>
                 <tr><td>9</td><td>2411232011</td><td>鍾明俊</td></tr>
                 <tr><td>10</td><td>2411232012</td><td>何晏宇</td></tr>
                 <tr><td>11</td><td>2411232013</td><td>梁庭榛</td></tr>
                 <tr><td>12</td><td>2411232014</td><td>温宜亭</td></tr>
-                <tr><td>13</td><td>2411232015</td><td>紀柏帆</td><td>康樂</td></tr>
+                <tr><td>13</td><td>2411232015</td><td>紀柏帆</td></tr>
                 <tr><td>14</td><td>2411232016</td><td>陳梓峰</td></tr>
                 <tr><td>15</td><td>2411232017</td><td>羅怡芳</td></tr>
-                <tr><td>16</td><td>2411232018</td><td>王言潼</td><td>事務</td></tr>
-                <tr><td>17</td><td>2411232019</td><td>吳弈漢</td><td>副班代</td></tr>
+                <tr><td>16</td><td>2411232018</td><td>王言潼</td></tr>
+                <tr><td>17</td><td>2411232019</td><td>吳弈漢</td></tr>
                 <tr><td>18</td><td>2411232020</td><td>劉瑋傑</td></tr>
                 <tr><td>19</td><td>2411232022</td><td>林昱辰</td></tr>
                 <tr><td>20</td><td>2411232023</td><td>林俊澄</td></tr>
@@ -200,96 +177,93 @@
                 <tr><td>30</td><td>2411232037</td><td>賴駿凱</td></tr>
                 <tr><td>31</td><td>2411232039</td><td>張雨琇</td></tr>
                 <tr><td>32</td><td>2411232040</td><td>胡裕晟</td></tr>
-                <tr><td>33</td><td>2411232041</td><td>吳益駿</td><td>班長</td></tr>
+                <tr><td>33</td><td>2411232041</td><td>吳益駿</td></tr>
                 <tr><td>34</td><td>2411232042</td><td>簡國峰</td></tr>
                 <tr><td>35</td><td>2411232043</td><td>楊禮維</td></tr>
                 <tr><td>36</td><td>2411232044</td><td>孔佑豪</td></tr>
                 <tr><td>37</td><td>2411232046</td><td>林楷哲</td></tr>
                 <tr><td>38</td><td>2411232050</td><td>邱彥鈞</td></tr>
-                <tr><td>39</td><td>2411132022</td><td>郭曜逵</td><td>服務</td></tr>
+                <tr><td>39</td><td>2411132022</td><td>郭曜逵</td></tr>
+                <!-- 其他表格內容 -->
             </table>
-            <div class="pagination">
-                <button onclick="changePage(-1)">上一頁</button>
-                <span id="page-info"></span>
-                <button onclick="changePage(1)">下一頁</button>
-            </div>
         </div>
+
+        <!-- 右边的表格 -->
+        <div class="table-container">
+            <table id="cadre-table">
+                <tr>
+                    <th>姓名</th>
+                    <th>幹部名稱</th>
+                </tr>
+                <tr>
+                    <td>黃鈺晴</td>
+                    <td>學藝</td>
+                </tr>
+                <tr>
+                    <td>紀柏帆</td>
+                    <td>康樂</td>
+                </tr>
+                <tr>
+                    <td>羅怡芳</td>
+                    <td>事務</td>
+                </tr>
+                <tr>
+                    <td>吳弈漢</td>
+                    <td>副班代</td>
+                </tr>
+                <tr>
+                    <td>吳益駿</td>
+                    <td>班長</td>
+                </tr>
+                <tr>
+                    <td>郭曜逵</td>
+                    <td>服務</td>
+                </tr>
+                <!-- 其他表格內容 -->
+            </table>
         </div>
     </div>
-        <button class="back-button" onclick="showButtons()">返回首頁</button>
-        <button onclick="showContent('table2')">查看課表</button>
+
+    <!-- 分页按钮 -->
+    <div class="pagination">
+        <button onclick="changePage(-1)">上一頁</button>
+        <span id="page-info">Page 1 of 3</span>
+        <button onclick="changePage(1)">下一頁</button>
     </div>
-    
-    <div id="table2" class="hidden-content">
-        <h3>（夜）資工－2（上）課表</h3>
-        <table>
-            <tr>
-                <th>節次</th>
-                <th>時間</th>
-                <th>一</th>
-                <th>二</th>
-                <th>三</th>
-                <th>四</th>
-                <th>五</th>
-                <th>六</th>
-            </tr>
-            <tr>
-                <td rowspan="2">六</td><td>13:40 - 14:25</td><td></td><td></td><td></td><td></td><td></td><td>計算機網路</td>
-            </tr>
-            <tr>
-                <td>教室</td><td></td><td></td><td></td><td></td><td></td><td>2702</td>
-            </tr>
-            <tr>
-                <td rowspan="2">七</td><td>14:30 - 15:15</td><td></td><td></td><td></td><td></td><td></td><td>計算機網路</td>
-            </tr>
-            <tr>
-                <td>教室</td><td></td><td></td><td></td><td></td><td></td><td>2702</td>
-            </tr>
-            <tr>
-                <td rowspan="2">八</td><td>15:20 - 16:05</td><td></td><td></td><td></td><td></td><td></td><td>計算機網路</td>
-            </tr>
-            <tr>
-                <td>教室</td><td></td><td></td><td></td><td></td><td></td><td>2702</td>
-            </tr>
-            <tr>
-                <td rowspan="2">九</td><td>16:10 - 16:55</td><td></td><td></td><td></td><td></td><td></td><td></td>
-            </tr>
-            <tr>
-                <td>教室</td><td></td><td></td><td></td><td></td><td></td><td></td>
-            </tr>
-            <tr>
-                <td rowspan="2">十</td><td>18:00 - 18:45</td><td>班會</td><td>資料結構</td><td>國防</td><td>人工智慧概論</td><td>計算機組織</td><td></td>
-            </tr>
-            <tr>
-               <td>教室</td><td>6605</td><td>2702</td><td></td><td>2705</td><td>2702</td><td></td>
-            </tr>
-            <tr>
-                <td rowspan="2">十一</td><td>18:50 - 19:35</td><td>班會</td><td>資料結構</td><td>國防</td><td>人工智慧概論</td><td>計算機組織</td><td></td>
-            </tr>
-            <tr>
-                <td>教室</td><td>6605</td><td>2702</td><td></td><td>2705</td><td>2702</td><td></td>
-            </tr>
-            <tr>
-                <td rowspan="2">十二</td><td>19:40 - 20:25</td><td>數位邏輯設計</td><td>資料結構</td><td>工程數學</td><td>人工智慧概論</td><td>計算機組織</td><td></td>
-            </tr>
-            <tr>
-                <td>教室</td><td>2703</td><td>2702</td><td>0000</td><td>2705</td><td>2702</td><td></td>
-            </tr>
-            <tr>
-                <td rowspan="2">十三</td><td>20:30 - 21:15</td><td>數位邏輯設計</td><td>體育</td><td>工程數學</td><td>台灣開發史</td><td></td><td></td>
-            </tr>
-            <tr>
-                <td>教室</td><td>2703</td><td>0000</td><td>0000</td><td>3206</td><td></td><td></td>
-            </tr>
-            <tr>
-                <td rowspan="2">十四</td><td>21:20 - 22:05</td><td>數位邏輯設計</td><td>體育</td><td>工程數學</td><td>台灣開發史</td><td></td><td></td>
-            </tr>
-            <tr>
-                <td>教室</td><td>2703</td><td>0000</td><td>0000</td><td>3206</td><td></td><td></td>
-            </tr>
-        </table>
-        <button class="back-button" onclick="showButtons()">返回首頁</button>
-        <button onclick="showContent('table1')">查看班級名單</button>
-    </div>
+
+    <script>
+        // JavaScript分页功能，如果需要的话
+        let currentPage = 1;
+        const recordsPerPage = 22; // 每页显示的记录数
+
+        function showPage(page) {
+            const rows = document.querySelectorAll('#class-table tr');
+            const totalPages = Math.ceil((rows.length - 1) / recordsPerPage); // 减去标题行
+
+            if (page < 1) page = 1;
+            if (page > totalPages) page = totalPages;
+
+            rows.forEach((row, index) => {
+                if (index === 0) return; // 保留标题行
+                row.style.display = (index > (page - 1) * recordsPerPage && index <= page * recordsPerPage) ? '' : 'none';
+            });
+
+            currentPage = page;
+            document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages}`;
+        }
+
+        function changePage(amount) {
+            showPage(currentPage + amount);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            showPage(1); // 显示第一页
+        });
+    </script>
+
+    <div class="button-container">
+        <button onclick="window.location.href='index.html'">返回主頁</button>
+        <button onclick="window.location.href='curr.html'">課表</button>
+    </div> 
 </body>
 </html>
