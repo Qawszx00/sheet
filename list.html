@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>(夜)資工-2表單</title>
-    <link rel="icon" href="https://png.pngtree.com/png-clipart/20210911/ourmid/pngtree-study-textbook-png-image_3900752.png" type="image/png">
+    <title>(夜)資工-2</title>
     <style>
         .table-container {
             margin: 0 20px; /* 为两个表格之间增加间距 */
@@ -85,25 +84,43 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
             margin-bottom: 20px; /* 增加按鈕之間的間距 */
         }
-        button:hover {
-            background-color: #45a049;
-            transform: translateY(-2px);
-        }
-
-        button:active {
-            background-color: #3e8e41;
-            transform: translateY(0);
-        }
-
-        button:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.4);
-        }
         .button-container {
             display: flex;
             justify-content: center; /* 水平居中 */
             align-items: center; /* 垂直居中（如果容器有高度的話） */
-             gap: 20px; /* 增加按鈕之間的間距 */
+            gap: 20px; /* 增加按鈕之間的間距 */
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            background-color: #f44336;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #e31e0f;
+            transform: translateY(-2px);
+        }
+
+        .list-button {
+            padding: 10px 20px;
+            background-color: #ec8907;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .list-button:hover {
+            background-color: #d97706;
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -117,11 +134,6 @@
                     <th>編號</th>
                     <th>學號</th>
                     <th>姓名</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>導師</td>
-                    <td>黃馨逸</td>
                 </tr>
                 <tr>
                     <td>1</td>
@@ -266,10 +278,9 @@
             showPage(1); // 显示第一页
         });
     </script>
-
     <div class="button-container">
-        <button onclick="window.location.href='index.html'">返回主頁</button>
-        <button onclick="window.location.href='curr.html'">課表</button>
-    </div> 
+    <button class="back-button" onclick="window.location.href='主頁.html'">返回主頁</button>
+    <button class="list-button" onclick="window.location.href='名單.html'">班級名單</button>
+</div> 
 </body>
 </html>
