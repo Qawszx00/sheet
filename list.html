@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>(夜)資工-2名單</title>
+    <link rel="icon" href="https://png.pngtree.com/png-clipart/20210911/ourmid/pngtree-study-textbook-png-image_3900752.png" type="image/png">
     <style>
         .table-container {
             margin: 0 20px; /* 为两个表格之间增加间距 */
@@ -86,9 +87,10 @@
         }
         .button-container {
             display: flex;
-            justify-content: center; /* 水平居中 */
-            align-items: center; /* 垂直居中（如果容器有高度的話） */
-            gap: 20px; /* 增加按鈕之間的間距 */
+            justify-content: center;
+            gap: 20px; /* 設定按鈕之間的間距 */
+            margin-top: 20px;
+            flex-wrap: wrap; /* 在小屏幕上自動換行 */
         }
 
         .back-button {
@@ -135,7 +137,7 @@
                     <th>學號</th>
                     <th>姓名</th>
                 </tr>
-                <tr>
+                <tr >
                     <td></td>
                     <td>導師</td>
                     <td>黃馨逸</td>
@@ -155,7 +157,7 @@
                     <td>2411232004</td>
                     <td>何亮妤</td>
                 </tr>
-                <tr>
+                <tr style="background-color: #FFFFE0;">
                     <td>4</td>
                     <td>2411232005</td>
                     <td>黃鈺晴</td>
@@ -175,38 +177,104 @@
                     <td>2411232009</td>
                     <td>陳淑瀅</td>
                 </tr>
-                <tr><td>8</td><td>2411232010</td><td>蔣佳霖</td></tr>
-                <tr><td>9</td><td>2411232011</td><td>鍾明俊</td></tr>
-                <tr><td>10</td><td>2411232012</td><td>何晏宇</td></tr>
-                <tr><td>11</td><td>2411232013</td><td>梁庭榛</td></tr>
-                <tr><td>12</td><td>2411232014</td><td>温宜亭</td></tr>
-                <tr><td>13</td><td>2411232015</td><td>紀柏帆</td></tr>
-                <tr><td>14</td><td>2411232016</td><td>陳梓峰</td></tr>
-                <tr><td>15</td><td>2411232017</td><td>羅怡芳</td></tr>
-                <tr><td>16</td><td>2411232018</td><td>王言潼</td></tr>
-                <tr><td>17</td><td>2411232019</td><td>吳弈漢</td></tr>
-                <tr><td>18</td><td>2411232020</td><td>劉瑋傑</td></tr>
-                <tr><td>19</td><td>2411232022</td><td>林昱辰</td></tr>
-                <tr><td>20</td><td>2411232023</td><td>林俊澄</td></tr>
-                <tr><td>21</td><td>2411232024</td><td>王泰融</td></tr>
-                <tr><td>22</td><td>2411232025</td><td>吳泓緯</td></tr>
-                <tr><td>23</td><td>2411232026</td><td>葉亞琳</td></tr>
-                <tr><td>24</td><td>2411232028</td><td>謝思恩</td></tr>
-                <tr><td>25</td><td>2411232029</td><td>蔡宇桐</td></tr>
-                <tr><td>26</td><td>2411232031</td><td>何品儀</td></tr>
-                <tr><td>27</td><td>2411232032</td><td>林政澔</td></tr>
-                <tr><td>28</td><td>2411232033</td><td>張哲瑋</td></tr>
-                <tr><td>29</td><td>2411232034</td><td>黃妙真</td></tr>
-                <tr><td>30</td><td>2411232037</td><td>賴駿凱</td></tr>
-                <tr><td>31</td><td>2411232039</td><td>張雨琇</td></tr>
-                <tr><td>32</td><td>2411232040</td><td>胡裕晟</td></tr>
-                <tr><td>33</td><td>2411232041</td><td>吳益駿</td></tr>
-                <tr><td>34</td><td>2411232042</td><td>簡國峰</td></tr>
-                <tr><td>35</td><td>2411232043</td><td>楊禮維</td></tr>
-                <tr><td>36</td><td>2411232044</td><td>孔佑豪</td></tr>
-                <tr><td>37</td><td>2411232046</td><td>林楷哲</td></tr>
-                <tr><td>38</td><td>2411232050</td><td>邱彥鈞</td></tr>
-                <tr><td>39</td><td>2411132022</td><td>郭曜逵</td></tr>
+                <tr>
+                    <td>8</td>
+                    <td>2411232010</td>
+                    <td>蔣佳霖</td>
+                </tr>
+                <tr>
+                    <td>9</td><td>2411232011</td><td>鍾明俊</td>
+                </tr>
+                <tr>
+                    <td>10</td><td>2411232012</td><td>何晏宇</td>
+                </tr>
+                <tr>
+                    <td>11</td><td>2411232013</td><td>梁庭榛</td>
+                </tr>
+                <tr>
+                    <td>12</td><td>2411232014</td><td>温宜亭</td>
+                </tr>
+                <tr style="background-color: #FFFFE0;">
+                    <td>13</td><td>2411232015</td><td>紀柏帆</td>
+                </tr>
+                <tr>
+                    <td>14</td><td>2411232016</td><td>陳梓峰</td>
+                </tr>
+                <tr>
+                    <td>15</td><td>2411232017</td><td>羅怡芳</td>
+                </tr>
+                <tr style="background-color: #FFFFE0;">
+                    <td>16</td><td>2411232018</td><td>王言潼</td>
+                </tr>
+                <tr style="background-color: #FFFFE0;">
+                    <td>17</td><td>2411232019</td><td>吳弈漢</td>
+                </tr>
+                <tr>
+                    <td>18</td><td>2411232020</td><td>劉瑋傑</td>
+                </tr>
+                <tr>
+                    <td>19</td><td>2411232022</td><td>林昱辰</td>
+                </tr>
+                <tr>
+                    <td>20</td><td>2411232023</td><td>林俊澄</td>
+                </tr>
+                <tr>
+                    <td>21</td><td>2411232024</td><td>王泰融</td>
+                </tr>
+                <tr>
+                    <td>22</td><td>2411232025</td><td>吳泓緯</td>
+                </tr>
+                <tr>
+                    <td>23</td><td>2411232026</td><td>葉亞琳</td>
+                </tr>
+                <tr>
+                    <td>24</td><td>2411232028</td><td>謝思恩</td>
+                </tr>
+                <tr>
+                    <td>25</td><td>2411232029</td><td>蔡宇桐</td>
+                </tr>
+                <tr>
+                    <td>26</td><td>2411232031</td><td>何品儀</td>
+                </tr>
+                <tr>
+                    <td>27</td><td>2411232032</td><td>林政澔</td>
+                </tr>
+                <tr>
+                    <td>28</td><td>2411232033</td><td>張哲瑋</td>
+                </tr>
+                <tr>
+                    <td>29</td><td>2411232034</td><td>黃妙真</td>
+                </tr>
+                <tr>
+                    <td>30</td><td>2411232037</td><td>賴駿凱</td>
+                </tr>
+                <tr>
+                    <td>31</td><td>2411232039</td><td>張雨琇</td>
+                </tr>
+                <tr>
+                    <td>32</td><td>2411232040</td><td>胡裕晟</td>
+                </tr>
+                <tr style="background-color: #FFFFE0;">
+                    <td>33</td><td>2411232041</td><td>吳益駿</td>
+                </tr>
+                <tr>
+                    <td>34</td><td>2411232042</td><td>簡國峰</td>
+                </tr>
+                <tr>
+                    <td>35</td><td>2411232043</td><td>楊禮維</td>
+                </tr>
+                <tr>
+                    <td>36</td><td>2411232044</td><td>孔佑豪</td>
+                </tr>
+                <tr>
+                    <td>37</td><td>2411232046</td><td>林楷哲</td>
+                </tr>
+                <tr>
+                    <td>38</td><td>2411232050</td><td>邱彥鈞</td>
+                </tr>
+                <tr style="background-color: #FFFFE0;">
+                    <td>39</td><td>2411132022</td><td>郭曜逵</td>
+                </tr>
                 <!-- 其他表格內容 -->
             </table>
         </div>
@@ -215,32 +283,32 @@
         <div class="table-container">
             <table id="cadre-table">
                 <tr>
-                    <th>姓名</th>
                     <th>幹部名稱</th>
+                    <th>姓名</th>
                 </tr>
                 <tr>
-                    <td>黃鈺晴</td>
-                    <td>學藝</td>
-                </tr>
-                <tr>
-                    <td>紀柏帆</td>
-                    <td>康樂</td>
-                </tr>
-                <tr>
-                    <td>羅怡芳</td>
-                    <td>事務</td>
-                </tr>
-                <tr>
-                    <td>吳弈漢</td>
-                    <td>副班代</td>
-                </tr>
-                <tr>
+                    <td>班代</td>
                     <td>吳益駿</td>
-                    <td>班長</td>
                 </tr>
                 <tr>
+                    <td>副班代</td>
+                    <td>吳弈漢</td>
+                </tr>
+                <tr>
+                    <td>學藝股長</td>
+                    <td>黃鈺晴</td>
+                </tr>
+                <tr>
+                    <td>康樂股長</td>
+                    <td>紀柏帆</td>
+                </tr>
+                <tr>
+                    <td>服務股長</td>
                     <td>郭曜逵</td>
-                    <td>服務</td>
+                </tr>
+                <tr>
+                    <td>事務股長</td>
+                    <td>王言潼</td>
                 </tr>
                 <!-- 其他表格內容 -->
             </table>
