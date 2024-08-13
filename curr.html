@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>資工系-2 課表</title>
+    <link rel="icon" href="https://png.pngtree.com/png-clipart/20210911/ourmid/pngtree-study-textbook-png-image_3900752.png" type="image/png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,6 +15,8 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
+            padding: 10px;
+            box-sizing: border-box;
         }
 
         h2 {
@@ -22,8 +25,24 @@
             text-align: center;
         }
 
+        .tables-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .table-container {
+            flex: 1;
+            min-width: 300px;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
         table {
-            width: 80%;
+            width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
         }
@@ -32,6 +51,7 @@
             border: 1px solid #ddd;
             padding: 8px;
             text-align: center;
+            word-wrap: break-word;
         }
 
         th {
@@ -45,19 +65,25 @@
 
         .button-container {
             display: flex;
-            gap: 20px;
+            justify-content: center;
+            gap: 20px; /* 設定按鈕之間的間距 */
             margin-top: 20px;
+            flex-wrap: wrap; /* 在小屏幕上自動換行 */
         }
 
-        .back-button {
+        .back-button, .list-button {
             padding: 10px 20px;
-            background-color: #f44336;
             border: none;
             border-radius: 8px;
             color: white;
             font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
+            width: auto; /* 讓按鈕自適應內容大小 */
+        }
+
+        .back-button {
+            background-color: #f44336;
         }
 
         .back-button:hover {
@@ -66,90 +92,165 @@
         }
 
         .list-button {
-            padding: 10px 20px;
             background-color: #ec8907;
-            border: none;
-            border-radius: 8px;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .list-button:hover {
             background-color: #d97706;
             transform: translateY(-2px);
         }
+        .back-button:hover, .list-button:hover {
+            background-color: #a9a9a975; /* 灰色 */
+            transform: translateY(-2px);
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 600px) {
+            table {
+                font-size: 14px;
+            }
+
+            th, td {
+                padding: 6px;
+            }
+
+            h2 {
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+
+            .back-button, .list-button {
+                width: 100%;
+                max-width: 200px; /* 在小屏幕上按鈕全寬且有最大寬度限制 */
+            }
+        }
     </style>
 </head>
 <body>
     <h2>資工系-2(上) 課表</h2>
-    <table>
-        <tr>
-            <th>節次</th>
-            <th>時間</th>
-            <th>一</th>
-            <th>二</th>
-            <th>三</th>
-            <th>四</th>
-            <th>五</th>
-            <th>六</th>
-        </tr>
-        <tr>
-            <td rowspan="2">六</td><td>13:40 - 14:25</td><td></td><td></td><td></td><td></td><td></td><td>計算機網路</td>
-        </tr>
-        <tr>
-            <td>教室</td><td></td><td></td><td></td><td></td><td></td><td>2702</td>
-        </tr>
-        <tr>
-            <td rowspan="2">七</td><td>14:30 - 15:15</td><td></td><td></td><td></td><td></td><td></td><td>計算機網路</td>
-        </tr>
-        <tr>
-            <td>教室</td><td></td><td></td><td></td><td></td><td></td><td>2702</td>
-        </tr>
-        <tr>
-            <td rowspan="2">八</td><td>15:20 - 16:05</td><td></td><td></td><td></td><td></td><td></td><td>計算機網路</td>
-        </tr>
-        <tr>
-            <td>教室</td><td></td><td></td><td></td><td></td><td></td><td>2702</td>
-        </tr>
-        <tr>
-            <td rowspan="2">九</td><td>16:10 - 16:55</td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-            <td>教室</td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-            <td rowspan="2">十</td><td>18:00 - 18:45</td><td>班會</td><td>資料結構</td><td>國防</td><td>人工智慧概論</td><td>計算機組織</td><td></td>
-        </tr>
-        <tr>
-           <td>教室</td><td>6605</td><td>2702</td><td></td><td>2705</td><td>2702</td><td></td>
-        </tr>
-        <tr>
-            <td rowspan="2">十一</td><td>18:50 - 19:35</td><td>班會</td><td>資料結構</td><td>國防</td><td>人工智慧概論</td><td>計算機組織</td><td></td>
-        </tr>
-        <tr>
-            <td>教室</td><td>6605</td><td>2702</td><td></td><td>2705</td><td>2702</td><td></td>
-        </tr>
-        <tr>
-            <td rowspan="2">十二</td><td>19:40 - 20:25</td><td>數位邏輯設計</td><td>資料結構</td><td>工程數學</td><td>人工智慧概論</td><td>計算機組織</td><td></td>
-        </tr>
-        <tr>
-            <td>教室</td><td>2703</td><td>2702</td><td>0000</td><td>2705</td><td>2702</td><td></td>
-        </tr>
-        <tr>
-            <td rowspan="2">十三</td><td>20:30 - 21:15</td><td>數位邏輯設計</td><td>體育</td><td>工程數學</td><td>台灣開發史</td><td></td><td></td>
-        </tr>
-        <tr>
-            <td>教室</td><td>2703</td><td>0000</td><td>0000</td><td>3206</td><td></td><td></td>
-        </tr>
-        <tr>
-            <td rowspan="2">十四</td><td>21:20 - 22:05</td><td>數位邏輯設計</td><td>體育</td><td>工程數學</td><td>台灣開發史</td><td></td><td></td>
-        </tr>
-        <tr>
-            <td>教室</td><td>2703</td><td>0000</td><td>0000</td><td>3206</td><td></td><td></td>
-        </tr>
-    </table>
+    <div class="table-container">
+        <!-- 表格內容 -->
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>節次</th>
+                    <th>時間</th>
+                    <th>一</th>
+                    <th>二</th>
+                    <th>三</th>
+                    <th>四</th>
+                    <th>五</th>
+                    <th>六</th>
+                </tr>
+                <tr>
+                    <td rowspan="2">六</td><td>13:40 - 14:25</td><td></td><td></td><td></td><td></td><td></td><td>計算機網路</td>
+                </tr>
+                <tr>
+                    <td>教室</td><td></td><td></td><td></td><td></td><td></td><td>2702</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">七</td><td>14:30 - 15:15</td><td></td><td></td><td></td><td></td><td></td><td>計算機網路</td>
+                </tr>
+                 <tr>
+                    <td>教室</td><td></td><td></td><td></td><td></td><td></td><td>2702</td>
+                </tr>
+                 <tr>
+                    <td rowspan="2">八</td><td>15:20 - 16:05</td><td></td><td></td><td></td><td></td><td></td><td>計算機網路</td>
+                </tr>
+                <tr>
+                    <td>教室</td><td></td><td></td><td></td><td></td><td></td><td>2702</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">九</td><td>16:10 - 16:55</td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>教室</td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">十</td><td>18:00 - 18:45</td><td>班會</td><td>資料結構</td><td>國防</td><td>人工智慧概論</td><td>計算機組織</td><td></td>
+                </tr>
+                <tr>
+                    <td>教室</td><td>6605</td><td>2702</td><td>8301</td><td>2705</td><td>2702</td><td></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">十一</td><td>18:50 - 19:35</td><td>班會</td><td>資料結構</td><td>國防</td><td>人工智慧概論</td><td>計算機組織</td><td></td>
+                </tr>
+                <tr>
+                    <td>教室</td><td>6605</td><td>2702</td><td>8301</td><td>2705</td><td>2702</td><td></td>
+                </tr>
+                <tr>
+                     <td rowspan="2">十二</td><td>19:40 - 20:25</td><td>數位邏輯設計</td><td>資料結構</td><td>工程數學</td><td>人工智慧概論</td><td>計算機組織</td><td></td>
+                </tr>
+                <tr>
+                     <td>教室</td><td>2703</td><td>2702</td><td>0000</td><td>2705</td><td>2702</td><td></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">十三</td><td>20:30 - 21:15</td><td>數位邏輯設計</td><td>體育</td><td>工程數學</td><td>台灣開發史</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>教室</td><td>2703</td><td>0000</td><td>0000</td><td>3206</td><td></td><td></td>
+                </tr>
+                 <tr>
+                    <td rowspan="2">十四</td><td>21:20 - 22:05</td><td>數位邏輯設計</td><td>體育</td><td>工程數學</td><td>台灣開發史</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>教室</td><td>2703</td><td>0000</td><td>0000</td><td>3206</td><td></td><td></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 右边的表格 -->
+        <div class="table-container">
+            <table id="cadre-table">
+                <tr>
+                    <th>課程</th>
+                    <th>授課老師</th>
+                </tr>
+                <tr>
+                    <td>班會</td>
+                    <td>黃馨逸</td>
+                </tr>
+                <tr>
+                    <td>數位邏輯設計</td>
+                    <td>周孝興</td>
+                </tr>
+                <tr>
+                    <td>資料結構</td>
+                    <td>陳奐瑀</td>
+                </tr>
+                <tr>
+                    <td>體育(羽球)</td>
+                    <td>廖敏竣</td>
+                </tr>
+                <tr>
+                    <td>工程數學</td>
+                    <td>李承翰</td>
+                </tr>
+                <tr>
+                    <td>人工智慧概論</td>
+                    <td>詹毓偉</td>
+                </tr>
+                <tr>
+                    <td>台灣開發史</td>
+                    <td>賴郁君</td>
+                </tr>
+                <tr>
+                    <td>計算機組織</td>
+                    <td>陳立軒</td>
+                </tr>
+                <tr>
+                    <td>計算機網路</td>
+                    <td>林崇智</td>
+                </tr>
+                <tr>
+                    <td>國防</td>
+                    <td>林慈瑩</td>
+                </tr>
+                <!-- 其他表格內容 -->
+            </table>
+        </div>
+    </div>
+    </div>
 
     <div class="button-container">
         <button class="back-button" onclick="window.location.href='index.html'">返回主頁</button>
